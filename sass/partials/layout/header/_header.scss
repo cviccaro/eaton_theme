@@ -1,0 +1,87 @@
+/**
+ * Page Header
+ */ 
+header#header {
+    @include clearfix;
+    width:100%;
+    padding:28px 40px 28px 15px;
+    position:relative;
+    box-sizing: border-box;
+    #logo { float:left; }
+    #block-eaton-elements-eaton-account { float:right; }
+}
+
+/** 
+ *  Navigation, before main#main, after header
+ */
+.main-prefix {
+    .site-title {
+        float:left;
+        margin:16px 0px 16px 20px;
+    }
+    width:100%;
+    @include clearfix;
+    #block-system-main-menu {
+        ul.menu {
+            padding:0;
+            margin:0;
+            height:48px;
+            float:right;
+            li {
+                position:relative;
+                float:left;
+                margin:0;
+                height:100%;
+                box-sizing: border-box;
+                a {
+                    width:100%;
+                    padding:14px 35px;
+                    height:100%;
+                    display:block;
+                    margin:0;
+                    box-sizing: border-box;
+                }
+            }
+        }
+        @include at-breakpoint(4 640px) {
+            text-align:center;
+            ul.menu {
+                float:none;
+                display:inline-block;
+                margin-left:auto;
+                margin-right:auto;
+                @include clearfix;
+            }
+        }
+        
+        
+    }
+}
+
+.user-logout,
+.user-welcome {
+    margin-top:10px;
+}
+
+#block-splash-image {
+    //margin-bottom:25px;
+    margin:0;
+    p{
+        margin:0;
+    }   
+}
+
+
+
+div.drilldown {
+    ul.menu {
+        li,li a {
+            @include box-sizing(content-box);
+        }
+    }
+}
+div.admin-tabs,div#admin-toolbar {
+        * {
+            @include box-sizing(content-box);
+        }
+}

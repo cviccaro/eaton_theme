@@ -1,0 +1,28 @@
+/**
+ * User account block
+ **/
+#block-eaton-elements-eaton-account {
+    .user-picture,
+    .user-welcome,
+    .user-logout,
+    .user-login {
+        float:left;
+    }
+    .user-picture {
+        margin-right:15px;
+    }
+    .user-logout,.user-login {
+        margin-left:15px;
+    }
+}
+
+/**
+ *  Events in Review / Approved Event tabbed-switcher
+ **/
+#block-eaton-elements-eaton-event-table-switcher {
+    @include clearfix;
+    @include pad-left;
+    @include pad-right;
+    padding-top:30px;
+    padding-bottom:20px;
+}

@@ -1,0 +1,27 @@
+footer#footer {
+    border-top:1px solid $grey;
+    background:$light_grey;
+    font-size:11px;
+    color:$lighter_carbon;
+    .copyright {
+    	float:left;
+    }
+    .block-menu {
+    	float:left;
+    	ul {
+    		margin:0;
+    	}
+    	ul, li {
+    		list-style:none;
+    	}
+    	li {
+    		float:left;
+    		clear:none;
+    		padding:0 5px;
+    	}
+    	a {
+    		margin:0; 
+    		padding:0;
+    	}
+    }
+}

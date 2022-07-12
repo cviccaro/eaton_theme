@@ -1,0 +1,68 @@
+////////////////////////
+// Mixins Partials
+//
+// All of your mixins should go in this file.
+////////////////////////
+
+@mixin pad($multiplier: 1) {
+    @include pad-left($multiplier);
+    @include pad-right($multiplier);
+    @include pad-top($multiplier / 2);
+    @include pad-bottom($multiplier / 2);
+}
+$pad_amount: 50px;
+
+@mixin pad-left($multiplier: 1) {
+    padding-left:$pad_amount * $multiplier;
+}
+@mixin pad-right($multiplier: 1) {
+    padding-right:$pad_amount * $multiplier;
+}
+@mixin pad-top($multiplier: 1) {
+    padding-top:$pad_amount * $multiplier;
+}
+@mixin pad-bottom($multiplier: 1) {
+    padding-bottom:$pad_amount * $multiplier;
+}
+@mixin panel-title($type: 'margin') {
+        @if ($type == 'margin') {
+            margin:50px 0px 35px;
+        }
+        @if ($type == 'padding') {
+            padding:50px 0px 35px;
+            margin:0;
+        }
+}
+
+@mixin small-title {
+    font-size:$font_size_average;
+    color:$carbon;
+    font-weight:bold;
+}
+
+@mixin regular-title {
+    font-size:$font_size_medium;
+    color:$blue;
+}
+
+@mixin medium-title {
+    font-size:$font_size_bigger;
+    color:$blue;
+}
+
+@mixin eaton-button {
+    @include sassy-button("simple", 7px, 12px, $blue, $blue, $white, 'none');
+    box-shadow:none;
+    font-weight:bold;
+    text-transform:uppercase;
+    text-decoration:none;
+    margin-right:10px;
+    padding:16px 34px;
+    line-height:17px;
+    text-align:center;
+    position:relative;
+    border:none;
+    &.active {
+        background:$dark_blue;
+    }
+}

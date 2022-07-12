@@ -1,0 +1,609 @@
+/**
+ * Classes node content utilizes
+ */
+.full-width-content {
+    width:100%;
+    padding:0!important;
+    @include clearfix;  
+    & > * {
+        padding-left:20px;
+        padding-right:20px;
+    }
+}
+
+/**
+ * Rendered Node
+ */
+
+article.node {
+    header {
+        width:100%;
+    }
+    header,div.content {
+        padding-left:20px;
+        padding-right:20px;
+    }
+}
+
+body.front {
+    article.node {
+        header,div.content {
+            padding:0;
+        }
+    }
+}
+/**
+ * Node Form, used for Event Requests
+ **/
+form.node-form {
+    label {
+        float:left;
+        margin-right:$label_margin;
+    }
+    input,select { float:left; }
+    .form-item { @include clearfix; }
+    .form-type-textarea {
+        label {
+            float:none;
+            margin-bottom:10px;
+        }
+    }
+    .form-type-checkboxes,.form-type-select {
+        & > label {
+            // Field label
+            float:left;
+            margin-right:35px;
+        }
+    }
+    .form-type-checkboxes {
+        .form-checkboxes {
+            float:left;
+            .form-type-checkbox {
+                margin-top:0;
+                margin-bottom:0;
+                margin-right:12px;
+                float:left;
+                input,label { float:left; }
+                input {
+                    margin:0 6px 0 0;
+                }
+            }
+        }
+    }
+    .field-multiple-table {
+        min-width:700px;
+        td {
+            .cck_multiple_field_remove_button {
+                float:right;            
+                margin:10px 0px 5px 15px;
+                & + .form-item {
+                    margin-top:5px;
+                    float:left;
+                }        
+            }
+        }
+    }
+    .field-name-field-visitor-information {
+        table.field-multiple-table {
+            width:100%;
+                        tr {
+                            td { 
+                               padding:20px 0px;
+                            }
+                        }
+            td {
+                input.cancel {
+                    float:left;
+                    margin-top:28px;
+                }
+                .form-wrapper {
+                   @include span-columns(2);
+                   margin-bottom:0;
+                    &.field-type-list-text {
+                        @include span-columns(2.25);
+                    }
+                    &.field-type-list-boolean {
+                        @include span-columns(3.25);
+                        padding-top:30px;
+                    }
+                    label {
+                        margin-right:0;
+                    }
+                    .form-item {
+                        & > label,input {
+                            float:left;
+                            clear:both;
+                            width:100%;
+                        }
+                        .form-text {
+                            max-width:200px;
+                        }
+                        &.form-type-checkbox {
+                            input,label {
+                                clear:none;
+                                width:auto;
+                            }
+                            label {
+                                margin:0 0 0 5px;
+                            }
+                            input {
+                                margin:0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .field-name-field-possible-dates,
+    .field-name-field-approved-date,
+    .field-name-field-denied-suggested-date {
+        table {
+            width:100%;
+            tr,td { padding:0;}
+            tr {
+                @include span-columns(4);
+                clear: none;
+                &:last-child {
+                    @include span-columns(4 omega);
+                }
+            }
+            .form-wrapper {
+                margin:0;
+                padding:0;
+                .container-inline-date {
+                    float:left;
+                    clear:none;
+                    padding:35px 0px;
+                    & > .form-item { width:100%; }
+                    .date-float {
+                        float:left;
+                        clear:none;
+                    }
+                    .date-padding {
+                        width:100%;
+                        padding:0;
+                    }
+                    .form-item { 
+                        margin:0;
+                        .form-type-textfield {
+                            width:50%;
+                            margin:0;
+                            label {
+                                padding:12px 0px;
+                                margin:0 $label_margin 0 0;
+                            }
+                            label,input {
+                                float:left;
+                            }
+                            input {
+                                width:100px;
+                                margin:0;
+                            }
+                            &.form-item-field-possible-dates-und-0-value-date,
+                            &.form-item-field-possible-dates-und-1-value-date,
+                            &.form-item-field-possible-dates-und-2-value-date,
+                            &.form-item-field-possible-dates-und-0-value2-date,
+                            &.form-item-field-possible-dates-und-1-value2-date,
+                            &.form-item-field-possible-dates-und-2-value2-date {
+                                input {
+                                    width:150px;
+                                }
+                            }
+                        }
+                    }
+                    &.end-date-wrapper {
+                        padding-top:0px;
+                        & > .form-item > label {
+                            // "To" text for Date range
+                            padding-bottom:35px;
+                        }
+                    }
+                }
+            }
+            fieldset {
+                padding:20px 0;
+                legend {
+                    .fieldset-legend {
+                    }
+                 }
+            }
+            tr:first-child {
+                fieldset {
+                    padding-top:0;
+                }
+            }
+            tr:last-child {
+                fieldset {
+                    padding-bottom:0;
+                }
+            }
+        }
+        legend {
+            padding-bottom:20px;
+        }
+        legend,.fieldset-wrapper {
+            float:left;
+            clear:both;
+        }
+        .date-no-float {
+            width:100%;
+        }
+        .date-float {
+            float:left;
+            margin:0 0 10px 5px;
+            label {
+                margin: 0px 0px 0px $label_margin;
+            }
+        }
+        fieldset 
+        .end-date-wrapper {
+            .form-type-date-popup > label {
+                /* TO */
+                float:left;
+                clear:both;
+                margin-bottom:10px;
+                & + .date-padding { clear:left; }
+            }
+        }
+        .date-padding {
+            .form-item {
+                float:left;
+                & + .form-item { margin-left: $label_margin; }
+                label,input,.description {
+                    float:left;
+                }
+                input {
+                    clear:right;
+                }
+                .description {
+                    clear:left;
+                    margin:5px 0 0 50px;
+                }
+            }
+        }
+    }
+    .field-name-field-room-requirements {
+        .form-type-checkbox {
+            float:left; 
+            margin-right:10px;
+        }
+    }
+    
+    .form-submit {
+        margin-left:0;
+    }
+    .form-checkboxes {
+        float:left;
+        clear:both;
+    }
+    .chosen-container {
+        float:left;
+        clear:both;
+        min-width:40%;
+    }
+    div.description {
+        padding:15px 0px 0px;
+        float:left;
+        clear:both;
+    }
+
+    .field-name-field-possible-dates {
+        table.field-multiple-table {
+            tbody {
+                tr {
+                    display: none;
+                    legend {
+                        display: none;
+                    }
+                }
+                tr:first-child {
+                    display: table-row;
+                    width: 100%;
+                    td {
+                        display: none;
+                    }
+                    td:not(.field-multiple-drag):not(.tabledrag-hide) {
+                        width: 100%;
+                        display: block;
+                        .date-combo {
+                            .fieldset-wrapper {
+                                display: flex;
+                                flex-direction: row;
+                                width: 100%;
+                                .container-inline-date {
+                                    float: none;
+                                    padding-top: 35px;
+                                    &.start-date-wrapper {
+                                        &::before {
+                                            content: "Start Date";
+                                            display: block;
+                                            font-size: 16px;
+                                            font-weight: bold;
+                                            padding-bottom: 15px;
+                                        }
+                                    }
+                                    &.end-date-wrapper {
+                                        &::before {
+                                            content: "End Date";
+                                            display: block;
+                                            font-size: 16px;
+                                            font-weight: bold;
+                                            padding-bottom: 15px;
+                                        }
+                                        & > .form-type-date-popup {
+                                            & > label {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                                @media screen and (max-width: 1140px) {
+                                    flex-direction: column;
+                                    .container-inline-date {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .pane-node-field-event-visibility {
+        display: none;
+    }
+
+    .pane-node-form-buttons {
+        .form-wrapper.form-actions {
+            margin-top: 0;
+        }
+    }
+}
+
+/**
+ * Event Registration Page
+ */
+#eaton-backbone-approved-event-preregistration-upload-form,
+#eaton-backbone-approved-event-preregistration-add-existing-registrant-form,
+#eaton-backbone-event-registrant-form {
+    @include clearfix;
+    padding-bottom:50px!important;
+    & > div {
+        @include pad-left;
+        @include pad-right;
+        & > h2 {
+            @include panel-title;
+        }
+    }
+}
+
+#eaton-backbone-event-registrant-form {
+    .eaton-event-details {
+        padding-left:0;
+        padding-right:0;
+    }
+}
+#eaton-backbone-event-registrant-edit-form {
+    .form-item-email {
+        display:none;
+    }
+    .form-item-last-name,
+    .form-item-title,
+    .form-item-country,
+    .form-item-zip,
+    .form-item-market-focus {
+        clear:right;
+    }
+    .form-item-visitor-type,
+    .form-item-company,
+    .form-item-city,
+    .form-item-state {
+        padding-right:5%;
+        clear:left;
+    }
+}
+#eaton-event-attendees-app {
+        h2 {
+            @include panel-title(padding);
+            @include pad-left;
+        }
+}
+#eaton-backbone-event-registrant-form {
+    .form-wrapper,.form-item {
+        margin:0px 0px 30px;
+        float:left;
+        width:45%;
+        padding-right:5%;
+        .form-item {
+            margin:0;
+        }
+        input { 
+            width:100%;
+        }
+    }
+    .chosen-container {
+        //max-width:150px!important;
+        width:100%!important;
+    }
+    .field-type-taxonomy-term-reference {
+        .autocomplete-deluxe-container { position:absolute; }
+    }
+    .form-item-email {
+        float:left;
+        clear:both;
+        margin-bottom:45px;
+    }
+    .form-item-last-name,
+    .form-item-city,
+    .field-name-field-city,
+    .field-name-field-company,
+    .form-item-visitor-type,
+    .form-item-title,
+    .form-item-country,{
+        clear:left;
+    }
+    .form-item-market-focus,
+    .form-item-state,
+    .field-name-field-attendee-state {
+        clear: right;
+    }
+    .field-name-field-attendee-last-name,
+    .field-name-field-attendee-title,
+    .field-name-field-attendee-zip,
+    .form-item-zip {
+        padding-left:5%;
+        padding-right:0;
+        clear:right;
+    }
+    .field-name-field-attendee-picture,
+    .form-item-picture {
+        padding-left:5%;
+        padding-right:0;
+        clear:right;
+        input[type="file"] {
+            float:left;
+            width:auto;
+        }
+        input[type="submit"] {
+            float:left;
+            width:auto;
+            margin-left:5px;
+        }
+        .description {
+            float:left;
+            clear:both;
+        }
+    }
+}
+
+/**
+ *  Any form with a state-dropdown
+ */
+/*form.states-dropdown {
+        &.no-state {
+            .field-name-field-attendee-zip,.form-item-zip { margin-left: 5%!important; }
+        }
+}*/
+
+/** 
+ * Generic Split-style
+ */
+.split-wrapper {
+    width:100%;
+    .split-left,
+    .split-right {
+        width:50%;
+        float:left;
+    }
+    .split-right {
+        clear: right;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .split-wrapper {
+        .split-left,
+        .split-right {
+            width: 100%;
+            clear: both;
+        }
+    }
+}
+
+/**
+ * Split-style form
+ */
+form.split-form {
+    .form-wrapper,.form-item {
+        margin:0px 0px 35px;
+        float:left;
+        width:45%;
+        padding-right:5%;
+        &.form-item-last-name,&.form-item-title,&.form-item-city,&.form-item-zip { padding-right:0; }
+        .form-item {
+            margin:0;
+        }
+        input { 
+            width:100%;
+        }
+    }
+    .webform-component-textarea {
+        float:left;
+        clear:both;
+    }
+    .form-actions {
+        float:left;
+        clear:both;
+        margin-top:25px!important;
+    }
+    .form-item-picture {
+        clear:right;
+    }
+    .form-item-event-registrant-current-picture {
+        clear:left;
+    }
+    .form-item-preview-picture {
+        float:right;
+        padding-right:25%;
+    }
+}
+
+.eaton-event-details {
+    @include pad;
+    @include clearfix;
+    .event-detail {
+        float:left;
+        padding-right:25px;
+        &.event-detail-field_interests_topics {
+            clear:both;
+            width:100%;
+            padding:35px 0 0;
+        }
+    }
+    margin-bottom: 25px;
+}
+body.page-thanks {
+        #block-system-main {
+            .content {
+                & > * {
+                    float:left;
+                    clear:both;
+                }
+            }
+            .request-status-ics {
+                width:100%;
+            }
+            .event-detail-title {
+                padding-bottom:35px;
+            }
+            .eaton-event-details {
+                padding:0;
+                width:100%;
+            }
+        }
+}
+
+.eaton-backbone-event-attendees {
+    padding:0px 20px;
+    @include clearfix;
+    .attendee-details {
+        float:left;
+        margin:10px 15px;
+        &.first {
+            margin-left:0px;
+        }
+    }
+}
+
+/**
+ * Remove Node Form
+ */
+form.confirmation {
+    @include pad;
+    .form-actions {
+        float:none!important;
+        clear:none!important;
+    }
+}

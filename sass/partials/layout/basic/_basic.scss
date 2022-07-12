@@ -1,0 +1,754 @@
+
+@include sticky-footer(43px, "#wrapper", "#push", "#footer"); // Compass sticky footer
+
+/**
+ * Basic HTML Elements
+ **/
+
+body { position:relative; }
+h1#page-title {
+    margin:0;
+    @include pad;
+
+}
+h2 {
+    margin-bottom:30px;
+        &.subtitle {
+            margin-top:0;
+        }
+}
+p,.fieldset-description {
+    line-height:24px;
+    margin:19px 0px;
+}
+
+/**
+ * Regions
+ **/
+
+#wrapper { @include container; height:100%; }
+main#main { padding-bottom:30px; }
+
+/**
+ * Targeted page regions
+ */
+body.page-node-add-event-request,
+body.page-node-edit.node-type-event-request,
+body.page-event-preregistration {
+    // Squish contents
+    main#main {
+        padding-bottom:0px;
+    }
+    footer#footer {
+        margin-top:0px;
+    }
+}
+body.front,
+body.page-user-register,
+body.page-user,
+body.page-thanks,
+body.page-today,
+body.page-event-accept-suggested-date,
+body.page-eaton-backbone-help-csv-template,
+body.page-eaton-backbone-help-xls-template {
+    #block-system-main { @include pad; }
+}
+body.page-my-registrations {
+    .attendee-details {
+        @include pad;
+    }
+}
+body.page-today {
+    .subtitle {
+        margin-bottom:8px;
+    }
+    .date-display-single {
+        font-size:$font_size_small;
+        font-style:italic;
+    }
+    .eaton-backbone-event-attendees {
+        padding:25px 0px;
+    }
+    .eaton-location-filter-form {
+        @include clearfix;
+        .form-item,
+        .form-submit {
+            float: left;
+            clear: none;
+        }
+        .form-submit {
+            margin-left: 1em;
+        }
+    }
+}
+
+body.page-register {
+    .splash-image {
+        margin-left: 50px;
+        margin-top: 25px;
+    }
+    .page-register-title {
+        margin-bottom: 25px;
+    }
+    .field {
+        margin: 2rem 0;
+        .field-label {
+            margin-bottom: 5px;
+        }
+        .field-content {
+            line-height: 22px;
+        }
+    }
+    .splash-image {
+        float: left;
+        clear: both;
+    }
+    .eaton-event-details {
+        float: left;
+        clear: left;
+        max-width: 33.333333%;
+        box-sizing: border-box;
+    }
+    .split-form {
+        float: left;
+        clear: right;
+        max-width: 66.66666%;
+        padding-top: 41px!important;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    body.page-register {
+        .eaton-event-details {
+            max-width: 100%;
+        }
+        .split-form {
+            max-width: 100%;
+            padding-top: 0!important;
+        }
+    }
+}
+
+/**
+ * Buttons and Icons
+ **/
+
+.big-button {
+    margin-top:15px;
+    @include span-columns(3);
+    @media all and (min-width: 1200px) and (max-width: 1500px) {
+        @include span-columns(3);
+    }
+    @media all and (min-width: 800px) and (max-width: 1199px) {
+        @include span-columns(4);
+    }
+    @media all and (min-width: 0px) and (max-width: 799px) {
+        @include span-columns(5);
+    }
+}
+span.icon {
+    width:17px;
+    height:17px;
+    float:left;
+}
+
+span.icon.icon-log-out {
+    margin-right:10px;
+}
+span.icon.icon-finish {
+    width:13px!important;
+    margin-right:10px;
+}
+span.icon.icon-print {
+    position:relative;
+    top:2px;
+    margin-right:7px;
+    width:19px!important;
+}
+a.ics-link {
+    background:url('../img/icon-ics.png') center center no-repeat;
+    background-size: cover;
+    width:16px;
+    height:16px;
+    margin-left:5px;
+    display:inline-block;
+}
+
+button.print-button {
+    min-width:230px;
+}
+/**
+ * Forms
+ */
+form {
+    fieldset.captcha {
+        float:left;
+        clear:both;
+        @include clearfix;
+    }
+    .form-type-managed-file {
+        .form-managed-file {
+
+        }
+        &.form-item-registrant-csv {
+            .form-managed-file,
+            .description {
+                float:left;
+            }
+        }
+    }
+    & > div > .form-submit {
+        // form submit not in a form-actions wrapper
+        margin-top:15px;
+        float:left;
+        clear:left;
+    }
+
+    label {
+        margin-bottom:15px;
+                &.option {
+                    margin-right:0;
+                }
+    }
+    input[type="text"],input[type="email"],.form-text,textarea {
+        padding:13px 11px;
+        @include box-sizing(border-box);
+    }
+    .form-item,.form-wrapper {
+        margin:0px 0px 30px;
+        &:last-child {
+            margin-bottom:0;
+        }
+    }
+    .description {
+        padding-top:5px;
+    }
+    .form-actions {
+        float:left;
+        clear:both;
+        margin-top:30px;
+    }
+    .form-item-country,.form-item-state {
+        select {
+            width:100%;
+        }
+    }
+    .cck_multiple_field_remove_button  {
+        @extend .big-button;
+        width:auto;
+    }
+    #remove-picture-button {
+        margin-bottom:15px;
+    }
+    .field-widget-options-onoff {
+        input,label { float:left; clear:none!important; }
+        label { margin-left:7px; }
+    }
+    .form-item-auto-send-emails {
+        float:left;
+        clear:both;
+        margin:20px 0px 0px;
+    }
+}
+
+.clientside-error,.messages {
+    width:90%;
+    margin:10px auto 30px!important;
+}
+
+.form-help {
+    margin-bottom: 1em;
+    float: left;
+    clear: both;
+    width: 100%;
+    .help-row {
+        float: left;
+        margin-bottom:2em;
+        label {
+            float: left;
+            clear: both;
+            margin: 0;
+        }
+        a {
+            float: left;
+            clear: both;
+            margin-left: 0;
+        }
+    }
+}
+
+#eaton-backbone-approved-event-preregistration-upload-form .form-type-managed-file {
+    float: left;
+    clear: both;
+}
+
+/**
+ * Tables
+ */
+
+table.eaton-app-table,
+table.views-table {
+    // .views-field.views-field-field-possible-dates-1,
+    // .views-field.views-field-field-possible-dates-2,
+    // .views-field.views-field-field-possible-dates-3,
+    // .views-field.views-field-possible-date-1,
+    // .views-field.views-field-possible-date-2,
+    // .views-field.views-field-possible-date-3 {
+    //     min-width:10em;
+    // }
+    .views-field.views-field-request-status {
+        min-width: 130px;
+    }
+    width:99.99%;
+    th,td {
+        //padding:20px 35px;
+        padding:12px 22px;
+        line-height:20px;
+        img {
+            display:none; // hide default sorts
+        }
+    }
+    th:first-child,td:first-child {
+        @include pad-left;
+    }
+    td.selected {
+        background-color:#dfd;
+    }
+    td.accepted {
+        background-color:#4390BF;
+        position:relative;
+        padding-top:35px;
+        &, a {
+            color:#fff;
+        }
+    }
+    td {
+        .td-annotation {
+            position:absolute;
+            top:0.5em;
+            width:100%;
+            padding:0em 1em;
+            left:0;
+            font-size:10px;
+            text-transform:uppercase;
+            color:#fff;
+            @include text-shadow(0px, 0px, 1px, #000);
+            text-overflow:ellipsis;
+            overflow:hidden;
+            white-space:nowrap;
+        }
+        font-size:13px;
+    }
+    tr.private {
+        // background-image:url('jquery-ui/images/custom-trans.png');
+        // background-repeat:repeat;
+        // background-position:top left;
+    }
+}
+
+/**
+ * Drupal's stupid tabs
+ */
+
+// hide the "View" link for event request nodes.
+body.page-node-edit.node-type-event-request div.tabs ul.primary li:first-child { display:none; }
+
+div.tabs {
+    height:24px;
+    ul,ul.primary {
+        margin:0;
+        float:left;
+        li {
+            a {
+                position:relative;
+                top:1px;
+                padding:5px 6px;
+                margin:0;
+            }
+        }
+    }
+    h2 {
+        display:none;
+    }
+}
+
+/**
+ * jQuery UI Dialog
+ */
+#modal {
+    min-width:480px;
+}
+.dialog-errors {
+    padding:10px;
+    margin:15px;
+}
+
+.ui-dialog.message-dialog {
+    .ui-dialog-titlebar {
+        height:12px;
+        padding:0;
+        position:relative;
+        top:8px;
+        .ui-dialog-title {
+            display:none;;
+        }
+    }
+    .alert-icon {
+        position: absolute;
+        top: 50%;
+        left: 40px;
+        margin-top: -24px;
+        font-size: 48px;
+        opacity: .7;
+    }
+    h4 {
+        margin:0 0 0 80px;
+    }
+    padding-bottom:15px;
+}
+
+.ui-dialog {
+    z-index:999;
+    padding:0;
+    form.split-form {
+
+    }
+    fieldset {
+        padding:0;
+        margin:0;
+    }
+    legend {
+        margin-bottom:30px;
+    }
+    .ui-dialog-content {
+        padding:25px 35px 25px;
+        p:first-child {
+            margin-top:0;
+        }
+    }
+    .ui-dialog-titlebar {
+        padding:35px;
+    }
+    .ui-dialog-buttonpane .ui-dialog-buttonset {
+        float:left;
+        padding-left:35px;
+        button {
+            margin-right:20px;
+            padding:8px 34px;
+            line-height:17px;
+        }
+        .ui-button {
+            margin-right:35px;
+        }
+    }
+    .field-name-field-denied-message {
+        label {
+            margin-bottom:30px;
+        }
+    }
+    .date-float {
+        .form-item {
+            margin:0;
+        }
+    }
+    .field-name-field-denied-suggested-date {
+                .start-date-wrapper,
+                .end-date-wrapper {
+                    .date-padding {
+                        padding:15px 0px 30px 0px;
+                    }
+                    .form-item-field-denied-suggested-date-und-0-value-date,
+                    .form-item-field-denied-suggested-date-und-0-value2-date {
+                        margin-right:15px;
+                    }
+                    .form-item-field-denied-suggested-date-und-0-value-date,
+                    .form-item-field-denied-suggested-date-und-0-value-time,
+                    .form-item-field-denied-suggested-date-und-0-value2-date,
+                    .form-item-field-denied-suggested-date-und-0-value2-time {
+                        float:left;
+                        label,input {
+                            float:left;
+                            clear:none;
+                        }
+                        label {
+                            margin:0px 10px 0px 0px;
+                            line-height:43px;
+                        }
+                        .description {
+                            display:none;
+                        }
+                    }
+                }
+    }
+}
+
+.ui-dialog[aria-describedby="tooltip"] {
+    &:after /* triangle decoration */
+    {
+        width: 0;
+        height: 0;
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left:10px;
+        margin: 0;
+    }
+   &.top:after {
+        top: -20px;
+        bottom: auto;
+    }
+    &.left:after {
+        left: 10px;
+        margin: 0;
+    }
+    #tooltip.right:after {
+        right: 10px;
+        left: auto;
+        margin: 0;
+    }
+}
+
+/**
+ * jQuery tooltips
+ **/
+
+.ui-tooltip {
+    padding: 10px 20px;
+    max-width:66%;
+}
+
+.arrow {
+  width: 70px;
+  height: 16px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  //margin-left: -35px;
+  bottom: -16px;
+}
+.arrow.top {
+  top: -16px;
+  bottom: auto;
+}
+
+.arrow:after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: -20px;
+  width: 25px;
+  height: 25px;
+  box-shadow: 6px 5px 9px -9px black;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  tranform: rotate(45deg);
+}
+.arrow.top:after {
+  bottom: -20px;
+  top: auto;
+}
+
+/**
+ * Chosen
+ */
+
+.chosen-container,.chosen-container.error {
+    .chosen-single {
+        height:43px;
+        & > span {
+            height:43px;
+            line-height:43px;
+        }
+        & > div > b {
+              margin-top:10px;
+            height:24px;
+        }
+    }
+}
+
+
+
+/**
+ * Eaton Apps
+ */
+
+.app-wrapper {
+    @include pad;
+}
+
+#eaton-event-requests-app {
+    margin-top:30px;
+}
+.eaton-app {
+    padding:0;
+    .eaton-app-header,.eaton-app-filters,.eaton-pager {
+        @include pad-left;
+        @include pad-right;
+    }
+    #eaton-event-requests-previous {
+        margin-right:15px;
+    }
+}
+.app-actions {
+    margin:15px 0px;
+}
+
+.eaton-pager,ul.pager {
+    list-style:none;
+    @include pad-left;
+    @include pad-right;
+    li {
+        float:left;
+        margin-right:15px;
+    }
+}
+#event_registrant_current_picture {
+    max-width:230px;
+    display:block;
+}
+
+.eaton-app-filters,
+.view-public-events .view-filters,
+.eaton-app-header {
+    @include clearfix;
+    .filter-field,.views-exposed-widget,.items-per-pager-container,.table-refresh-container {
+        float:right;
+        margin-left:15px;
+        label {
+            line-height:43px;
+        }
+    }
+    .date-divider {
+        float:left;
+        clear:none;
+        padding:0px 7px;
+        line-height:43px;
+    }
+    label {
+        float:left;
+        margin-right:7px;
+    }
+    select,input,.views-widget { float:left; }
+    .views-exposed-widget {
+        select {
+            min-width:100px;
+        }
+    }
+}
+
+
+/**
+ * Event Request Receipt
+ **/
+.event-request-receipt-wrapper {
+    @include clearfix;
+    @include pad;
+    .field-label,.field {
+        float:left;
+    }
+    .event-request-receipt-field {
+        float:left;
+        clear:both;
+        padding:10px 0px;
+        margin-bottom: 5px;
+    }
+    h3 {
+        margin:0;
+    }
+    .field-label {
+        margin: 0 0 10px;
+        // min-width:133px;
+        font-size:$font_size_medium;
+        color:$blue;
+        font-weight:normal;
+        display: block;
+        width: 100%;
+    }
+    .field-items {
+        float: left;
+    }
+    .event-request-receipt-field-possible-dates,
+    .event-request-receipt-field-room-requirements,
+    .event-request-receipt-field-interests-topics,
+    .event-request-receipt-field-purpose-of-visit,
+    .event-request-receipt-field-additional-areas,
+    .event-request-receipt-field-psec-catering,
+    .event-request-receipt-field-event-initiator {
+        h3 {
+            margin-bottom:5px;
+        }
+    }
+    .event-request-receipt-field-interests-topics {
+        width: 100%;
+    }
+    .field-type-list-text  {
+        display: block;
+        width: 100%;
+        line-height: 18px;
+    }
+    .register-button {
+        float: left;
+        clear: both;
+    }
+}
+
+
+.jp-timepicker {
+    background:#eee;
+    z-index:9999;
+    @include box-shadow(rgba(0,0,0,0.5) 2px 2px 10px);
+    max-width:250px;
+    dl {
+        padding:1em;
+        margin:0;
+    }
+    dt {
+        clear:left;
+        float:left;
+        margin:0.5em 0;
+        width:5em;
+        padding:3px 0;
+        text-align:left;
+    }
+    dd {
+        float:left;
+        clear:right;
+        margin:0.5em 0 0.5em 0.5em;
+    }
+}
+
+.timepicker-input-display {
+    background:#fff;
+    position:absolute;
+    z-index:2;
+    padding:13px 11px;
+    cursor:text;
+    & + .description {
+        display:none;
+    }
+}
+
+.flexslider {
+margin: 0;
+border: none;
+}
+
+.ui_tpicker_clear {
+    margin-left:0!important;
+}
+.ui-timepicker-reset {
+    padding:4px 8px;
+}
+
+
+.view-public-events .view-empty {
+    @include pad-left;
+    border-top: 1px solid $light_grey;
+    p {
+        font-size: 16px;
+        font-weight:bold;
+    }
+}

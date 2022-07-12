@@ -1,0 +1,130 @@
+/**
+ * Main panel layout: 4 rows.
+ */
+.panels-4r {
+    .panels-4r-row { 
+        border-bottom:1px solid $light_grey; 
+        &:last-child {
+            border-bottom:none;
+        }
+    }
+    .panels-4r-first-row {
+        .panel-pane { background-color: transparent!important; }
+    }
+    .panels-4r-second-row,
+    .panels-4r-third-row {
+        .panel-pane {
+            border-bottom:1px solid $light_grey;      
+            &:last-child {
+                border-bottom:none;
+            }
+        }
+    }
+    .panels-4r-fourth-row {
+        h2.pane-title {
+            color:#fff;
+        }
+        .pane-node-form-buttons {
+            background-color:$blue!important;
+            color:#fff;
+            .pane-title,.section-title { color: #fff; }
+            .form-submit {
+                @extend .gold;
+            }
+        }
+    }
+    .panel-pane {
+        &.odd { @extend .odd; }
+        &.even { @extend .even; }
+        .pane-content {
+            font-size:$font_size_average;
+        }
+    }
+
+ .panels-4r-region {
+        &.administrative-items {
+            .panel-pane.pane-administrative-items {
+                .pane-title,.section-title {
+                    @include regular-title;
+                }
+            }
+            .panel-pane {
+                .pane-title,.form-item label,fieldset legend {
+                    @include small-title;
+                }
+            }   
+        }
+    }
+}
+
+/**
+ * Panels inside of a Node Form
+ */
+form.node-form {
+    &.review-event,&.denied-event {
+        // Hide approved date field (and form field) on unapproved events
+        .pane-entity-form-field.pane-node-field-approved-date { display:none; }
+    }
+    &.new-node-form {
+        &.initiator {
+            .panels-4r-first-row {
+                padding-bottom:0;
+                
+            }
+        }
+        &.coordinator {
+            .pane-entity-form-field.pane-node-field-request-status {
+                display:block;
+            }
+        }
+        .pane-entity-form-field.pane-node-field-approved-date {
+            display:none;
+        }
+    }
+    
+    h2.pane-title {
+        font-size:$font_size_normal;
+        &.section-title {
+            @include regular-title;
+        }
+    }
+    
+    .pane-node-author {
+        .pane-content { font-style:italic; }
+    }   
+    
+    .panel-pane.pane-administrative-items .pane-content,
+    .pane-entity-form-field.pane-node-field-request-status,
+    .pane-entity-form-field.pane-node-field-denied-message {
+        display:none;
+    }
+    
+    .panel-pane.info-pane,
+    .pane-entity-form-field.pane-node-field-denied-suggested-date {
+        h2.pane-title {
+            font-weight:normal;
+            font-size:$font_size_normal;
+        }
+        .pane-content {
+            font-size:$font_size_small;
+        }
+    }
+}
+
+.pane-eaton-elements-eaton-event-table-switcher {
+    border-bottom:none!important;
+}
+
+
+/**
+ * Targeted panels on pages
+ */
+
+body.public-events-page {
+    .panels-4r-second-row {
+        border-bottom:none!important;
+    }
+}
+body.page-webform {
+    .panels-4r-first-row{ border-bottom:none!important; }
+}

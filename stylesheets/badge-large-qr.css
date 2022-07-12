@@ -1,0 +1,274 @@
+@font-face {
+  font-family: 'EatonReg';
+  src: url("../fonts/EatonReg.otf");
+}
+@font-face {
+  font-family: 'EatonMed';
+  src: url("../fonts/EatonMed.otf");
+}
+@font-face {
+  font-family: 'EatonBold';
+  src: url("../fonts/EatonBold.otf");
+}
+/* line 47, ../sass/badge-large-qr.scss */
+body {
+  margin: 0;
+  color: #111111;
+}
+
+@page {
+  position: relative;
+  color: #111111;
+}
+/* line 55, ../sass/badge-large-qr.scss */
+.badge {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+/* line 66, ../sass/badge-large-qr.scss */
+.badge * {
+  color: #111;
+  font-family: Eaton;
+  z-index: 99;
+}
+/* line 71, ../sass/badge-large-qr.scss */
+.badge img {
+  border: none;
+}
+/* line 74, ../sass/badge-large-qr.scss */
+.badge.no-background {
+  color: #111;
+  fill: #111;
+}
+/* line 78, ../sass/badge-large-qr.scss */
+.badge.no-background .badge-main,
+.badge.no-background .badge-left,
+.badge.no-background .badge-bottom,
+.badge.no-background .badge-large-qr {
+  background: transparent !important;
+}
+/* line 87, ../sass/badge-large-qr.scss */
+.badge.no-background tr.badge-bottom td,
+.badge.no-background tr.badge-main td {
+  text-align: center;
+}
+
+/* line 94, ../sass/badge-large-qr.scss */
+.empty-row .empty {
+  height: 100%;
+}
+
+/* line 98, ../sass/badge-large-qr.scss */
+.top-image {
+  width: auto;
+  height: 49mm;
+}
+
+/* line 102, ../sass/badge-large-qr.scss */
+.multi-badge-row {
+  width: 2.127in;
+  border: none;
+}
+
+/* line 106, ../sass/badge-large-qr.scss */
+table {
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-collapse: collapse;
+  color: #111;
+}
+
+/* line 114, ../sass/badge-large-qr.scss */
+.badge-table tbody {
+  border: none !important;
+}
+/* line 118, ../sass/badge-large-qr.scss */
+.badge-table td, .badge-table tr {
+  border: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+/* line 124, ../sass/badge-large-qr.scss */
+.badge-table .badge-main {
+  padding: 0;
+  height: 16.68mm;
+}
+/* line 129, ../sass/badge-large-qr.scss */
+.badge-table .badge-bottom {
+  padding: 0;
+}
+/* line 137, ../sass/badge-large-qr.scss */
+.badge-table .badge-main,
+.badge-table .badge-bottom {
+  background: rgba(0, 0, 0, 0.2);
+}
+/* line 143, ../sass/badge-large-qr.scss */
+.badge-table .qrcode {
+  padding: 0;
+  border: none;
+  position: relative;
+}
+/* line 152, ../sass/badge-large-qr.scss */
+.badge-table .badge-left, .badge-table .badge-right {
+  padding-top: 2mm;
+}
+/* line 155, ../sass/badge-large-qr.scss */
+.badge-table .badge-bottom td {
+  padding-bottom: 2mm;
+}
+/* line 158, ../sass/badge-large-qr.scss */
+.badge-table .badge-left {
+  width: 65%;
+  height: 16.68mm;
+  vertical-align: top;
+  overflow: visible;
+}
+/* line 166, ../sass/badge-large-qr.scss */
+.badge-table .badge-right {
+  width: 35%;
+  height: 16.68mm;
+  vertical-align: top;
+}
+/* line 176, ../sass/badge-large-qr.scss */
+.badge-table .badge-event-title .event-title-bottom {
+  margin-top: 5px;
+  font-weight: bold;
+}
+/* line 182, ../sass/badge-large-qr.scss */
+.badge-table .badge-attendee-name {
+  font-weight: bold;
+  padding: 40px 0px 10px;
+}
+/* line 187, ../sass/badge-large-qr.scss */
+.badge-table .badge-attendee-first-name {
+  font-size: 28px;
+  margin-left: 2mm;
+}
+/* line 192, ../sass/badge-large-qr.scss */
+.badge-table .badge-attendee-last-name {
+  font-size: 28px;
+  margin-left: 2mm;
+  margin-top: 1.25mm;
+}
+/* line 198, ../sass/badge-large-qr.scss */
+.badge-table .badge-attendee-title,
+.badge-table .badge-attendee-company {
+  font-size: 21px;
+  margin-left: 2mm;
+}
+/* line 204, ../sass/badge-large-qr.scss */
+.badge-table .badge-attendee-title {
+  margin-top: 0mm;
+  margin-bottom: 1.5mm;
+}
+
+/**
+ * Multi-badge PDF
+ */
+/* line 262, ../sass/badge-large-qr.scss */
+.empty-row {
+  height: 0.25in;
+}
+
+/* line 267, ../sass/badge-large-qr.scss */
+.ribbon-row {
+  height: 0.137in;
+  background: #f79221;
+}
+
+/* line 281, ../sass/badge-large-qr.scss */
+.text-length-short {
+  font-size: 28px;
+}
+/* line 284, ../sass/badge-large-qr.scss */
+.text-length-short.badge-attendee-title, .text-length-short.badge-attendee-company {
+  font-size: 21px !important;
+}
+
+/* line 289, ../sass/badge-large-qr.scss */
+.text-length-medium {
+  font-size: 21px;
+}
+/* line 292, ../sass/badge-large-qr.scss */
+.text-length-medium.badge-attendee-title, .text-length-medium.badge-attendee-company {
+  font-size: 13.86px !important;
+}
+
+/* line 297, ../sass/badge-large-qr.scss */
+.text-length-long {
+  font-size: 18.48px;
+}
+/* line 300, ../sass/badge-large-qr.scss */
+.text-length-long.badge-attendee-title, .text-length-long.badge-attendee-company {
+  font-size: 11.088px !important;
+}
+
+/* line 305, ../sass/badge-large-qr.scss */
+.text-length-extra-long {
+  font-size: 16.8px;
+  text-overflow: ellipsis;
+  white-space: normal;
+  position: relative;
+}
+
+/* line 319, ../sass/badge-large-qr.scss */
+.badge-ribbon, .badge-ribbon-authorized, .badge-ribbon-nonauthorized {
+  height: 0.137in;
+  width: 100%;
+  z-index: 999999;
+  position: absolute;
+  bottom: 0px;
+}
+
+/* line 326, ../sass/badge-large-qr.scss */
+.badge-ribbon {
+  background: #f79221;
+}
+
+/* line 330, ../sass/badge-large-qr.scss */
+.badge-ribbon-authorized {
+  background: red !important;
+}
+
+/* line 334, ../sass/badge-large-qr.scss */
+.badge-ribbon-nonauthorized {
+  background: blue !important;
+}
+
+/* line 339, ../sass/badge-large-qr.scss */
+tr.badge-large-qr td {
+  padding-top: 8mm;
+  padding-bottom: 2mm;
+  text-align: center;
+}
+
+/* line 347, ../sass/badge-large-qr.scss */
+table.no-background tr.badge-large-qr td img {
+  margin-left: 20px;
+}
+
+/* line 352, ../sass/badge-large-qr.scss */
+table.no-background tr.badge-main .badge-attendee-first-name,
+table.no-background tr.badge-main .badge-attendee-last-name {
+  text-align: center;
+}
+
+/* line 358, ../sass/badge-large-qr.scss */
+table.no-background tr.badge-bottom td {
+  width: 90%;
+}
+/* line 361, ../sass/badge-large-qr.scss */
+table.no-background tr.badge-bottom .badge-attendee-company,
+table.no-background tr.badge-bottom .badge-attendee-title {
+  text-align: center;
+}
+
+/* line 368, ../sass/badge-large-qr.scss */
+table.no-background tr.badge-main td.badge-left .badge-attendee-first-name {
+  font-size: 20px;
+}

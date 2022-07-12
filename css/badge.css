@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'EatonReg';
+  src: url("../fonts/EatonReg.otf"); }
+@font-face {
+  font-family: 'EatonMed';
+  src: url("../fonts/EatonMed.otf"); }
+@font-face {
+  font-family: 'EatonBold';
+  src: url("../fonts/EatonBold.otf"); }
+body {
+  margin: 0; }
+
+@page {
+  position: relative; }
+.badge {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden; }
+  .badge * {
+    color: #fff;
+    font-family: Eaton;
+    z-index: 99; }
+  .badge img {
+    border: none; }
+
+.empty-row .empty {
+  height: 44mm; }
+
+.top-image {
+  width: auto;
+  height: 49mm; }
+
+.multi-badge-row {
+  width: 2.127in;
+  border: none; }
+
+table {
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-collapse: collapse; }
+
+.badge-table tbody {
+  border: none !important; }
+.badge-table td, .badge-table tr {
+  border: none;
+  position: relative;
+  padding: 0;
+  margin: 0; }
+.badge-table .badge-main {
+  padding: 0;
+  height: 16.68mm; }
+.badge-table .badge-bottom {
+  padding: 0; }
+.badge-table .badge-main,
+.badge-table .badge-bottom {
+  background: #283981; }
+.badge-table .qrcode {
+  padding-right: 2mm;
+  position: relative; }
+.badge-table .badge-left, .badge-table .badge-right {
+  padding-top: 2mm; }
+.badge-table .badge-bottom td {
+  padding-bottom: 2mm; }
+.badge-table .badge-left {
+  width: 65%;
+  height: 16.68mm;
+  vertical-align: top;
+  overflow: visible; }
+.badge-table .badge-right {
+  width: 35%;
+  height: 16.68mm;
+  vertical-align: top; }
+.badge-table .badge-event-title .event-title-bottom {
+  margin-top: 5px;
+  font-weight: bold; }
+.badge-table .badge-attendee-name {
+  font-weight: bold;
+  padding: 40px 0px 10px; }
+.badge-table .badge-attendee-first-name {
+  font-size: 26px;
+  margin-left: 2mm; }
+.badge-table .badge-attendee-last-name {
+  font-size: 22px;
+  margin-left: 2mm;
+  margin-top: 2.37mm; }
+.badge-table .badge-attendee-title,
+.badge-table .badge-attendee-company {
+  font-size: 16px;
+  margin-left: 2mm; }
+.badge-table .badge-attendee-title {
+  margin-top: 2.5mm;
+  margin-bottom: 4mm; }
+
+/**
+ * Multi-badge PDF
+ */
+.empty-row {
+  height: 1.947in; }
+
+.ribbon-row {
+  height: 0.137in;
+  background: #f79221; }
+
+/*# sourceMappingURL=badge.css.map */

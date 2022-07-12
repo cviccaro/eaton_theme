@@ -1,0 +1,41 @@
+header#header {
+    border-bottom:1px solid $light_blue;
+}
+h1#page-title {
+    border-bottom:1px solid $light_grey;
+}
+.main-prefix {
+    background:$blue;
+    border-bottom:1px solid $dark_blue;
+    .site-title {
+        font-size:13px;
+        color:#fff;
+    }
+    ul.menu {
+        li {
+            border-left:1px solid $dark_blue;
+            border-right:1px solid $light_blue;
+            list-style-type:none;
+            list-style-image:none;
+            &:hover {
+                background:#0269a9;
+            }
+            &.last {
+                border-right:none;
+            }
+            a {
+                color:#fff;
+                text-decoration:none;
+                font-size:13px;
+                font-weight:bold;
+            }
+        }
+    }
+}
+
+.user-welcome,
+.user-logout {
+    color:$blue;
+    font-weight:bold;
+    font-size:15px;
+}

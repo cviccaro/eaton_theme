@@ -1,0 +1,473 @@
+/** 
+ * Basic HTML Elements
+ **/
+html,body {
+    font-family:Arial;
+    color:$carbon;
+    font-size:$font_size_normal;
+}
+a {
+    text-decoration:none;
+    color:$blue;
+    font-weight:bold;
+}
+h1 {
+    font-size:$font_size_larger;
+    &#page-title {
+        font-size:$font_size_huge;
+        color:$light_carbon;
+        font-weight:normal;
+        background:#eee;
+    }
+    &.blue {
+        color:$blue;
+        font-weight:normal;
+    }
+}
+h2 {
+    font-size:$font_size_medium;
+    color:$blue;
+    font-weight:normal;
+    &.large {
+        font-size:$font_size_big;
+    }
+    &.subtitle,&.receipt-title {
+        font-size:$font_size_bigger;
+    }
+    &.blue {
+        color:$blue;
+        font-weight:normal;
+    }
+}
+h3 {
+    font-size:$font_size_medium;
+    &.field-label,
+    &.blue {
+        color:$blue;
+        font-weight:normal;
+    }
+}
+legend {
+    font-size:$font_size_normal;
+}
+form {
+/* Error handling. */
+    .chosen-container.error .chosen-choices,
+    .chosen-container.error .chosen-single,
+    .form-item.error,
+    .form-item input.error,
+    .form-item textarea.error,
+    .form-item select.error {
+      border: 1px solid $red;
+    }
+    label {
+        color:$blue;
+        font-size:$font_size_average;
+        font-weight:bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    .form-text {
+        border:1px solid $light_grey;
+        font-size:$font_size_average;
+    }
+    .form-type-checkbox {
+       label {
+           color:#222;
+           font-size:$font_size_average;
+       }
+   }
+    .form-item {
+        .description {
+            font-size:$font_size_smaller;
+            font-style:italic;
+        }
+    }
+}    
+select {
+    color:#222;
+}
+    
+.clientside-error,.messages {
+    font-size:$font_size_small;
+    ul li {
+        font-size:$font_size_small;
+    }
+}
+/**
+ * Tables
+ **/
+table.eaton-app-table,
+table.views-table {
+    font-size:$font_size_small;
+    td,th {
+        border:1px solid $grey;
+    }
+    th {
+        font-size:$font_size_average + 1;
+        background-color:$blue;
+        &,a { color: #fff; }
+        border-right:1px solid $light_blue;
+        border-left:1px solid $dark_blue;
+        border-bottom:1px solid $dark_blue;
+        background-image:url('../img/arrows.png');
+        background-position: 95% 50%;
+        background-repeat:no-repeat;
+        &:first-child {
+            border-left:none;
+        }
+        &:last-child {
+            border-right:none;
+        }
+        &.sorting {
+            &.asc { background-image:url('../img/arrows-asc.png'); }
+            &.desc { background-image:url('../img/arrows-desc.png'); }
+        }
+    }
+    tr.odd { background-color:#fff; }
+    tr.even { background-color:#f5f5f5; }
+    th.views-field-operations {
+        background-image:none;
+    }
+    td.views-field-operations {
+        text-transform:uppercase;  
+        a {
+            float:left;
+            clear:both;
+            margin:3px 0;
+        }
+    }    
+    .views-field-nothing {
+        background-image:none;
+    }
+}
+
+/**
+ * Buttons and Icons
+ */
+
+button,.button,input[type="submit"],
+.big-button,
+#edit-cancel {
+    @include eaton-button;
+}
+.gold,
+.form-submit.gold,
+button.gold,
+.big-button.gold {
+    @include sassy-button("simple", 7px, 12px, #e9b344, #e9b344, $white, 'none');
+}
+
+span.icon {
+    background-image:url('../img/icon-sprite.png');
+}
+
+span.icon.icon-event-list {
+    background-position:0px 0px;
+}
+span.icon.icon-request-event {
+    background-position:-21px 0px;
+}
+span.icon.icon-log-out {
+    background-position:-37px 0px;
+}
+span.icon.icon-finish {
+    background-position:-59px 0px;
+}
+span.icon.icon-print {
+    background-position:-73px 0px;
+}
+
+/**
+ * Classes
+ */
+
+.grey-background {
+    background:$lighter_grey;
+}
+
+/**
+ *  Tabs
+ **/
+.vertical-tabs a{
+    font-weight:normal;
+}
+div.tabs {
+    border-top:1px solid $light_blue;
+    background:$dark_grey;
+    ul,ul.primary {
+        border:none;
+        background:none;
+        list-style:none;
+        li {
+            border:none;
+            background:none;
+            a {
+                border-top:none;
+                border-bottom:none;
+                border-right:none;
+                border-left:none;
+                background:$carbon;
+                color:#fff;
+                font-size:$font_size_smaller;
+                font-weight:normal;
+                &:hover,&.active {
+                    background:$light_carbon;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * jQuery UI
+ */ 
+
+.dialog-errors {
+    background:#faa;
+    border:1px solid #f00;
+    font-size:12px;
+    color:#f00;
+}
+
+.ui-dialog.message-dialog {
+    .ui-dialog-titlebar { 
+        background:transparent!important;
+        z-index:1000;
+        .ui-icon {
+            background-color:transparent!important;
+        }
+    }
+    @include border-radius(7px);
+    .ui-widget-content {
+        color:#fff;
+    }
+    &.alert-dialog,&.warning-dialog {
+        background-color: rgba(150,0,0,.9);
+    }
+    &.success-dialog {
+        background-color: rgba(0,150,0,.9);
+    }
+    background-color:rgba(0,0,13,0.9);
+}
+
+body.lt-ie10 {
+    &.alert-dialog,&.warning-dialog {
+        background-color: #960000;
+    }
+    &.success-dialog {
+        background-color: #009600;
+    }
+}
+.ui-dialog.deny-dialog,
+.ui-dialog.delete-dialog {
+    .ui-dialog-titlebar {
+        background:$red;
+        .ui-button {
+            .ui-icon {
+                background-color:$red;
+            }
+        }
+    }
+}
+
+.ui-dialog.approve-dialog,
+.ui-dialog.success-dialog {
+    .ui-dialog-titlebar {
+        background:$green;
+        .ui-button {
+            .ui-icon {
+                background-color:$green;
+            }
+        }
+    }
+}
+$checkin_color_rgba: rgba(0,150,0,.9);
+$checkin_color_hex: #009600;
+$checkout_color_rgba: rgba(206,30,50,.9);
+$checkout_color_hex: #CE1E32;
+
+$checkin_btn_border_color: #004500;
+$checkout_btn_border_color: #450000;
+
+.ui-dialog.message-dialog {
+    &.check-in-dialog {
+        background-color: $checkin_color_rgba;
+    }
+    &.check-out-dialog {
+        background-color: $checkout_color_rgba;
+    }
+}
+.ui-dialog {
+    .ui-dialog-buttonset {
+        .ui-button.check-in {
+            background: $checkin_color_rgba;
+            border-color: $checkin_btn_border_color;
+        }
+        .ui-button.check-out {
+            background: $checkout_color_rgba;
+            border-color: $checkout_btn_border_color;
+        }
+    }
+}
+body.lt-ie10 {
+    .ui-dialog.message-dialog {
+        &.check-in-dialog {
+            background-color: $checkin_color_hex;
+        }
+        &.check-out-dialog {
+            background-color: $checkout_color_hex;
+        }
+    }
+    .ui-dialog {
+        .ui-dialog-buttonset {
+            .ui-button.check-in {
+                background: $checkin_color_hex;
+                border-color: $checkin_btn_border_color;
+            }
+            .ui-button.check-out {
+                background: $checkout_color_hex;
+                border-color: $checkout_btn_border_color;
+            }
+        }
+    }
+}
+.ui-dialog {
+    background:#fff;
+    @include border-radius(0px);
+    .ui-dialog-titlebar {
+        @include border-radius(0px);
+        border:none;
+        font-size:$font_size_larger;
+        font-weight:normal;
+        .ui-button {
+            background:none;
+            border:none;
+            .ui-icon {
+                border:none;
+            }
+        }
+    }
+    label { color:$carbon; }
+    fieldset { border:none; }
+    legend {
+        .fieldset-legend {
+            @include regular-title;
+        }
+    }        
+    .field-name-field-denied-message {
+        label {
+            @include regular-title;
+            font-weight:normal;
+        }
+    }
+}
+.ui-button-text {
+    font-weight:bold;
+    font-size:12px;
+}
+
+.ui-timepicker-container {
+    z-index:9999!important;
+}
+/**
+ * jQuery tooltips
+ **/
+
+.ui-tooltip, .arrow:after {
+  background: $blue;
+  border: 1px solid $dark_blue;
+}
+.ui-tooltip {
+  color: #fff;
+  @include border-radius(7px);
+  font-size: $font_size_average;
+  @include box-shadow(0 0 7px black);
+}
+
+/**
+ *  Chosen
+ */
+
+.chosen-container .chosen-single {
+    background-color:#fff;
+    background-image:none!important;
+    @include border-radius(0px);
+    @include box-shadow(none);
+    border-top:1px solid #acadb2;
+    border-bottom:1px solid $light_grey;
+    border-left:1px solid $light_grey;
+    border-right:1px solid $light_grey;
+    font-weight:normal;
+}
+        
+
+/**
+* Eaton Apps
+**/
+.eaton-app {
+    .app-info {
+        font-weight:bold;
+    }
+}
+.eaton-app-filters,
+.eaton-app-header,
+.view-public-events .view-filters {
+    label {
+        color:$blue;
+        font-size:$font_size_average;
+    }
+}
+
+
+/**
+ * Event Request Receipt
+ */
+
+.event-request-receipt-wrapper {
+    h3 {
+        @include regular-title;
+        font-size:$font_size_normal;
+        font-weight:normal;
+    }
+    .request-status-text {
+        &, & > a {
+            color:$carbon;
+            font-weight:normal;
+            font-size:$font_size_average;
+        }
+    }
+    font-size:$font_size_average;
+    .field-type-datetime {
+        .date-display-start,.date-display-end,.date-display-single {
+            font-style:italic;
+        }
+    }
+
+    .register-button {
+        margin-top: 15px;
+    }
+}
+
+
+select.ui-datepicker-month {
+    color:#000!important;
+}
+
+div.ui-datepicker {
+    z-index: 1000!important;
+}
+
+div.ui-datepicker-buttonpane {
+    font-size:12px;
+}
+
+#working-text {
+    position: fixed;
+    top: 54%;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}

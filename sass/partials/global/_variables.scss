@@ -1,0 +1,46 @@
+////////////////////////
+// Variables Partials
+//
+// All of your variables should go in this file.
+////////////////////////
+
+$white: #fff;
+$dark_grey: #aaa;
+$grey: #bbb;
+$light_grey: #ccc;
+$lighter_grey: #efefef;
+$lightest_grey: #f5f5f5;
+$carbon: #222;
+$light_carbon: #555;
+$lighter_carbon: #666;
+$blue: #0279c2;
+$dark_blue: #0066a5;
+$light_blue: #0085d6;
+$red: #ce1e32;
+$green: #26ce1e;
+
+$font_size_normal: 16px;
+
+$font_size_huge: round($font_size_normal * (9/4));
+$font_size_big: round($font_size_normal * (7/4));
+$font_size_bigger: round($font_size_normal * (13/8));
+$font_size_largest: round($font_size_normal * 2);
+$font_size_larger: round($font_size_normal * 1.5);
+$font_size_large: round($font_size_normal * 1.25);
+$font_size_medium: round($font_size_normal * 1.15);
+$font_size_average:round($font_size_normal * .875);
+$font_size_small: round($font_size_normal * .85);
+$font_size_smaller: round($font_size_normal * .75);
+$font_size_smallest: round($font_size_normal * .66);
+$font_size_monster: round($font_size_normal * (11/4));
+
+$label_margin: 15px;
+
+// Susy
+$container-style: fluid;
+$container-width: 100%;
+// A Fluid Grid based on 960gs
+$total-columns: 12;
+$column-width: 60px;
+$gutter-width: 20px;
+$grid-padding: 0%;

@@ -1,0 +1,223 @@
+/**
+ * Main panel layout: 4 rows.
+ */
+
+.panels-4r {
+    .panels-4r-row {
+        @include pad;
+        padding-top:50px;
+        padding-bottom:50px;
+        .panel-pane {
+            width:100%;
+            box-sizing: border-box;
+        }
+    }
+    .panels-4r-second-row,
+    .panels-4r-third-row,
+    .panels-4r-fourth-row {
+        padding:0px;
+        .panel-pane {     
+            @include pad;
+            padding-top:50px;
+            padding-bottom:50px;
+            &.pane-node-webform {
+                padding-top:0;
+            }
+        }
+    }
+    .panels-4r-fourth-row {
+        .pane-node-form-buttons {
+            @include clearfix;
+            box-sizing: border-box;
+            .form-submit {
+                min-width:250px;
+            }
+        }
+    }    
+    .panels-4r-region {
+        &.administrative-items {
+            
+            .panel-pane.pane-administrative-items {
+                .pane-title,.section-title {
+                    padding-bottom:30px;
+                }
+            }
+            .panel-pane {
+                padding-bottom:20px;
+                &:last-child {
+                    padding-bottom:0;
+                }
+               .pane-title,.pane-content {
+                    float:left;
+                }
+                .pane-title,.form-item label {
+                    padding:0;
+                    margin-right:$label_margin;
+                    float:left;
+                    clear:both;
+                }
+            }   
+            .pane-entity-form-field.pane-node-field-event-visibility,
+            .pane-entity-form-field.pane-node-field-request-status {
+                &,& .pane-content { width:100%; }
+            }
+            .field-type-list-text.field-widget-options-select,.form-type-select {
+                 width:100%;
+                label,select,div {
+                    float:left;
+                    //clear:none!important;
+                }
+            }
+            .form-type-checkbox {
+                label {
+                    clear:none!important;
+                }
+            }
+        }
+    }
+
+    .field-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        clear: both;
+        border-bottom: 1px solid #ccc;
+        .panel-pane {
+            width: 50%;
+            border-bottom: none!important;
+            label {
+                width: 100%;
+            }
+            label,
+            input {
+                display: block;
+            }
+        }
+
+        &.odd {
+            .panel-pane {
+                background: #f5f5f5;
+            }
+        }
+
+        &.even {
+            .panel-pane {
+                background: #fff;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .panels-4r {
+        .field-row {
+            flex-direction: column;
+            .panel-pane {
+                width: 100%;
+                input {
+                    width: 100%;
+                }
+                & + .panel-pane {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.panels-4r-region-panels-4r-middle_top,
+.panels-4r-region-panels-4r-middle_bottom,
+.panels-4r-region-panels-4r-bottom {
+    width:100%!important;
+}
+
+
+.pane-public-events-panel-pane-1 {
+    width:100%;
+    padding-left:0px!important;
+    padding-right:0px!important;
+    padding-top:0px!important;
+    .view-filters {
+        @include pad-left;
+        padding-right:40px;
+        .views-exposed-widget {
+            padding-right:0px;
+        }
+    }
+}
+.pane-custom.pane-1 {
+    // status messages
+    display:block;
+    width:100%;
+    @include clearfix;
+    margin:-57px 0px 0px 36px;
+    .pane-content {
+        width:96.5%;
+    }
+    .messages {
+        width:100%;
+        margin:0;
+        ul { margin:0; }
+    }
+    
+}
+
+.pane-eaton-elements-eaton-event-table-switcher {
+    @include clearfix;
+    @include pad-left;
+    @include pad-right;
+    padding-top:30px!important;
+    padding-bottom:0;
+    #block-eaton-elements-eaton-event-table-switcher { padding:0; }
+}
+
+/**
+ * Panels in node form
+ */
+
+form.node-form {
+    h2.pane-title { 
+        margin:0;
+        padding:0 0 30px;
+    }
+    .pane-node-author {
+         float:left; 
+         clear:both;
+         @include clearfix;
+        .pane-title,.pane-content { margin-right:10px; float:left; }
+    }
+    .panel-pane.pane-node-field-request-status,
+    .panel-pane.pane-node-field-event-visibility { 
+            h2,label {
+                line-height:30px;
+            }
+            button {
+                line-height:0px;
+                margin-left:10px;
+            }
+    }
+    .panel-pane.info-pane,
+    .pane-entity-form-field {
+        //padding-top:10px;
+        float:left;
+        clear:both;
+        @include clearfix;
+    }
+    .pane-entity-form-field {
+        .pane-content {
+            & > .form-wrapper > .form-item > label {
+                // a label for a form field acting as a quasi-pane title
+                float:left;
+                clear:both;
+                padding-bottom:30px;
+                margin-bottom:0px;
+            }
+        }
+        .form-type-checkboxes {
+            & > label {
+                float:left;
+                clear:both!important;
+            }
+        }
+    }
+}

@@ -1,0 +1,201 @@
+/**
+ * Classes node content utilizes
+ */
+.full-width-content {
+    border-bottom:1px solid $dark_grey;
+}
+
+/**
+ * Rendered Node
+ */
+article.node {
+    header {
+        border-bottom:1px solid $dark_grey;
+        display:none;
+    }
+}
+/**
+ * Node Form, used for Event Requests
+ */
+form.node-form {
+    table {
+        thead .field-label {
+            display:none;
+        }  
+        td,tr,th,tbody,fieldset {
+            border:none;
+        }
+    }
+    label {
+        font-size:$font_size_average;
+        font-weight:bold;
+        &.option {
+            &, & > a {
+                font-weight:normal;
+                color:$carbon;
+            }
+        }
+    }
+
+    div.description {
+        font-style:italic;
+        font-size:$font_size_average - 2;
+    }
+
+    .field-multiple-drag,
+    .tabledrag-toggle-weight-wrapper,
+    .room-description,
+    .field-name-field-room-requirements > .form-type-checkboxes > label,
+    .field-name-field-sales-opportunities thead {
+        display:none;
+    }
+    
+    .field-name-field-possible-dates {
+        table {
+            float: left;
+            clear: left;
+            background:none;
+            td,tr,th,tbody,fieldset {
+                background:none;
+                border:none;
+            }
+/*            tr + tr {
+                border-top:1px solid $light_grey;
+            }*/
+            fieldset {
+              legend .fieldset-legend {
+                  @include small-title;
+                  .form-required { display:none; }
+              }
+            }
+            .form-wrapper {
+                .container-inline-date {
+                    label {
+                        @include small-title;
+                    }
+                }
+            }
+        }
+        .end-date-wrapper {
+            .form-type-date-popup > label {
+                /* TO */
+               font-weight:bold;
+            }
+        }
+        .date-padding {
+            .form-item {
+                label {
+
+                }
+                .description {
+                    font-size:$font_size_smallest;
+                    font-style:italic;
+                }
+            }
+        }
+    }
+
+    
+    .field-name-field-room-requirements {
+        .form-type-checkbox {
+            input {
+            }
+            label {
+                font-size:$font_size_small;
+                font-weight:bold;
+                ul { 
+                    font-size:$font_size_smaller;
+                    font-weight:normal; 
+                }
+            }
+        }
+    }
+    .field-name-field-sales-opportunities {
+        table,tr {
+            background:none;
+        }
+    }
+    
+    .field-name-field-visitor-information {
+        table.field-multiple-table {
+            tr {
+                background-color:transparent;
+            }
+        }
+    }
+    
+    
+    // Hide some labels
+    .form-item-title,
+/*    .form-item-field-event-visibility-und,*/
+    .form-item-field-event-location-und,
+    .form-item-field-customer-boolean-und,
+    .field-name-field-visitor-estimate,
+    .field-name-field-room-requirements-extra,
+    .field-name-field-interests-topics,
+    .field-name-field-sales-opportunities {
+        label { display:none; }
+    }
+    
+    &.new-node-form {
+        // new node form
+        .pane-node-field-denied-on-date,
+        .pane-node-field-denied-suggested-date,
+        .pane-node-field-denied-message,
+        .pane-node-field-approved-date {
+            display:none;
+        }
+    }
+}
+
+/**
+ * Event Registration Page
+ */
+
+body.page-event-preregistration {
+    #main .content {
+        form {
+            .form-item-name, // term name
+            .text-format-wrapper, // description
+            #edit-relations, // relations
+            #edit-path { // url path
+                display:none;
+            }
+            .field-name-field-dates-registered {
+                display:none;
+            }
+        }
+    }
+}
+
+/**
+ * Edit Registrant Form
+ */
+form#eaton-backbone-event-registrant-edit-form {
+    display:none;
+}
+
+/**
+ * Any form with states dropdowns
+ */
+form.states-dropdown {
+    &.no-state {
+        .field-name-field-attendee-state,.form-item-state { display:none; }
+    }
+}
+
+/**
+ * Event Listing Page
+ **/
+
+body.public-events-page {
+    /* hide this widget for non-admins */
+    .views-widget-filter-field_event_visibility_value {
+        display:none;
+    }
+    &.coordinator {
+        .views-widget-filter-field_event_visibility_value {
+            display:block;
+        }
+    }
+}

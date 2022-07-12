@@ -1,0 +1,115 @@
+////////////////////////
+// Email File
+//
+// This file gets turned into email.css.
+// This file is styles specific to HTML Emails
+////////////////////////
+
+////////////////////////
+// Base Import
+////////////////////////
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: true;
+
+$legacy-support-for-mozilla: false;
+@import 'partials/global/base';
+
+
+////////////////////////
+// Custom Code
+////////////////////////
+
+body {
+    text-align:center;
+    background:#eee;
+    font-family:Arial;
+    font-size:$font_size_average;
+    color:$carbon;
+}
+p {
+    line-height:20px;
+}
+.email-wrapper {
+    width:700px;
+    margin:0 auto;
+}
+
+.event-request-receipt-field {
+    margin-bottom: 20px;
+}
+
+.description {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.email-header {
+    border:1px solid $grey;
+    text-align:left;
+    background:#fff;
+    .email-header-inner {
+        padding:30px 20px;
+    }
+}
+.email-footer {
+    padding-top:20px;
+}
+    
+
+.big-button {
+    @include eaton-button;
+}
+
+.email-content {
+    background:#fff;
+    border:1px solid $grey;
+    border-top:none;
+    padding:30px;
+    text-align:left;
+}
+.email-actions {
+    margin-top:30px;
+}
+.email-link {
+    padding:20px 0px;
+    background:#eee;
+}
+a {
+    color:$blue;
+    font-size:11px;
+}
+h1,h3.field-label {
+    @include regular-title;
+    font-weight:normal;
+    margin:0px 0px 30px;
+}
+
+h3.field-label { 
+    font-size:$font_size_normal;
+    margin:0px 0px 10px;
+}
+
+.event-approval-link {
+    padding:20px 0px;
+}
+
+.date-display-single {
+    color:$blue;
+    font-size:$font_size_normal;
+}
+.field-name-field-denied-suggested-date .date-display-single {
+    color:$carbon;
+    font-size:$font_size_average;
+}
+.event-register-link {
+    padding:20px 0px 0px;
+}
+
+.event-detail {
+    margin:3px 0px;
+}
+
+h3.field-label {
+    @include regular-title;
+}

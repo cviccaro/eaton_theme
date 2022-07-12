@@ -1,0 +1,303 @@
+////////////////////////
+// Badge File
+//
+// This file gets turned into badge.css.
+// This file is styles specific to badges
+////////////////////////
+
+////////////////////////
+// Base Import
+////////////////////////
+//@import 'partials/global/base';
+
+@font-face {
+  font-family: 'EatonReg';
+  src: url('../fonts/EatonReg.otf');
+}
+@font-face {
+  font-family: 'EatonMed';
+  src: url('../fonts/EatonMed.otf');
+}
+@font-face {
+  font-family: 'EatonBold';
+  src: url('../fonts/EatonBold.otf');
+}
+
+////////////////////////
+// Single Badge
+////////////////////////
+$badge_width: 2.127in;
+$badge_height: 3.377in;
+$top_image_height: 49mm;
+$badge_main_height: 16.68mm;
+$ribbon_height: 0.137in;
+$padding: 2.0mm;
+$ribbon_default_color: #f79221;
+$badge_default_font_size: 24px;
+
+// $badge_width: 638px;
+// $badge_height: 1013px;
+// $top_image_height: 584px;
+// $badge_main_height: 389px;
+
+body {
+    margin:0;
+}
+@page {
+    position:relative;
+}
+.badge {
+   // background:url('http://eaton.jpestaging.com/sites/all/themes/eaton/img/Eaton_Badge_BG.jpg') top left no-repeat #0000ff;
+   // background-color:#0000ff;
+    // height:$badge_height;
+    // max-height:$badge_height;
+    // width:$badge_width;
+    width:100%;
+    height:100%;
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+    * {
+        color:#fff;
+       font-family:Eaton;
+       z-index:99;
+    }
+    img {
+        border:none;
+    }
+}
+.empty-row .empty {
+    height:$top_image_height - 5mm;
+}
+.top-image {
+    width:auto;
+    height:$top_image_height;
+}
+.multi-badge-row {
+    width:$badge_width;
+    border:none;
+}
+table {
+        border:none;
+    padding:0;
+    margin:0;
+    border-collapse: collapse;
+}
+.badge-table {
+    tbody {
+        border:none!important;
+    }
+    
+    td,tr {
+        border:none;
+        position:relative;
+        padding:0;
+        margin:0;
+    }
+    .badge-main {
+        padding:0;
+        height:$badge_main_height;
+        // max-height:$badge_main_height;
+    }
+    .badge-bottom {
+        padding:0;
+        td {
+            // padding-left:$padding;
+            // padding-right:$padding;
+            // padding-bottom:$padding;
+        }
+    }
+    .badge-main,
+    .badge-bottom {
+        background:#283981;
+        // width:$badge_width;
+    }
+    .qrcode {
+        // position:absolute;
+        // top:$padding;
+        // right:$padding;
+        padding-right:$padding;
+        position:relative;
+    }
+    .badge-left,.badge-right {
+        padding-top:$padding;
+    }
+    .badge-bottom td {
+        padding-bottom:$padding;
+    }
+    .badge-left {
+        // padding-left:$padding;
+        // width:$badge_width;
+        width:65%;
+        height:$badge_main_height;
+        vertical-align: top;
+        overflow:visible;
+    }
+    .badge-right {
+        width:35%;
+        height:$badge_main_height;
+        // padding-right:$padding;
+        vertical-align: top;
+    }
+    .badge-event-title {
+        .event-title-top {
+            //font-size:$font_size_medium;
+        }
+        .event-title-bottom {
+            margin-top:5px;
+         //   font-size:$font_size_largest;
+            font-weight:bold;
+        }
+    }
+    .badge-attendee-name {
+        // font-size:$font_size_monster;
+        font-weight:bold;
+        padding:40px 0px 10px;
+    }
+    .badge-attendee-first-name {
+        font-size:$badge_default_font_size;
+        margin-left:$padding;
+    }
+    .badge-attendee-last-name {
+        font-size:$badge_default_font_size;
+        margin-left:$padding;
+        margin-top:1.37mm;
+    }
+    .badge-attendee-title,
+    .badge-attendee-company {
+        font-size:$badge_default_font_size * 0.75;
+        margin-left:$padding;
+    }
+    .badge-attendee-title {
+        margin-top:0mm;
+        margin-bottom:4mm;
+    }
+    .badge-attendee-info {
+        // font-size:$font_size_normal;
+    }
+}
+
+
+/**
+ * Multi-badge PDF
+ */
+
+// .badges-table {
+//     .badge-table {
+//         padding:0.6in 0;
+//         width:100%!important;
+//         tr {
+//             width:100%!important;
+//         }
+//         img,.qrcode {
+//             max-width:1.0in!important;
+//         }
+//         .qrcode {
+//             border:0.17in solid #eee;
+//         }
+        
+//         .badge-event-title {
+//             .event-title-top {
+//                 padding:0.1in 0 0 0.25in;
+//                 font-size:$font_size_medium * .75;
+//             }
+//             .event-title-bottom {
+//                 font-size:$font_size_largest * .45;
+//                 padding-left:0.25in;
+//             }
+//         }
+//         .badge-attendee-name {
+//             font-size:$font_size_monster * .45;
+//             padding:0.15in 0 0.05in 0.25in;
+//         }
+//         .badge-attendee-info {
+//             padding-left:0.25in;
+//             font-size:$font_size_normal * .75;
+//         }
+//         .badge-left {
+//             float:none;
+//         }
+//         .badge-right {
+//             padding:0;
+//             width:2.0in;
+//             float:none;
+//         }
+//     }
+// }
+
+
+.empty-row {
+    //height: 584px;
+    height:1.947in;
+}
+
+.ribbon-row {
+    height:$ribbon_height;
+    background:$ribbon_default_color;
+}
+
+// .text-length-9,
+// .text-length-10,
+// .text-length-11,
+// .text-length-12,
+// .text-length-13,
+// .text-length-14 {
+//     font-size: 20px;
+// }
+
+.text-length-short {
+    $text_length: $badge_default_font_size;
+    font-size: $text_length;
+    &.badge-attendee-title,
+    &.badge-attendee-company {
+        font-size: $text_length * 0.75!important;
+    }
+}
+.text-length-medium {
+    $text_length: $badge_default_font_size * 0.75;
+    font-size: $text_length;
+    &.badge-attendee-title,
+    &.badge-attendee-company {
+        font-size: $text_length * 0.66!important;
+    }
+}
+.text-length-long {
+    $text_length: $badge_default_font_size * 0.66; 
+    font-size: $text_length;
+    &.badge-attendee-title,
+    &.badge-attendee-company {
+        font-size: $text_length * 0.6!important;
+    }
+}
+.text-length-extra-long {
+    $text_length: $badge_default_font_size * 0.6; 
+    font-size: $text_length;
+    text-overflow: ellipsis;
+    //overflow: hidden;
+    white-space: normal;
+    position: relative;
+    &.badge-attendee-title,
+    &.badge-attendee-company {
+        //max-width:$badge_width * .75!important;
+    //    overflow:visible!important;
+    }
+}
+
+.badge-ribbon,.badge-ribbon-authorized, .badge-ribbon-nonauthorized {
+    height: $ribbon_height;
+    width:100%;
+    z-index:999999;
+    position:absolute;
+    bottom: 0px;
+}
+.badge-ribbon {
+    background: $ribbon_default_color;
+}
+
+.badge-ribbon-authorized {
+    background: red!important;
+}
+
+.badge-ribbon-nonauthorized {
+    background: blue!important;
+}
